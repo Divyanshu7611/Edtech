@@ -1,0 +1,312 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700;800;900&family=Roboto:wght@400;500;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Roboto", sans-serif;
+    scroll-behavior: smooth;
+  }
+  body {
+    scroll-behavior: smooth;
+  }
+}
+
+body,
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+}
+
+.raleway {
+  font-family: "Raleway", sans-serif;
+}
+
+:root {
+  --primary: #fd0f73;
+  --primaryAccent: #ff4190;
+  --secondary: #24076f;
+  --secondaryAccent: #390da8;
+}
+
+.heroContainer {
+  background: url("/assets/images/heroBg.png");
+  background-size: cover;
+  background-position: right bottom;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 400px) {
+  .heroContainer {
+    background: url("/assets/images/heroBg.png"),
+      linear-gradient(to right, #31295e, #31295e);
+    background-size: 150% auto, cover;
+    background-position: right bottom, center;
+    background-repeat: no-repeat;
+  }
+}
+
+.shadows {
+  box-shadow: 0px 5px 50px 0px rgba(38, 45, 118, 0.08);
+}
+.headingLabel {
+  @apply raleway bg-[#D4E1FF] text-sm px-[22px] py-[8px] rounded-xl w-max;
+}
+.pinkline {
+  display: inline-block;
+  position: relative;
+}
+.pinkline::after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 12px;
+  bottom: 0;
+  right: 0;
+  background: url("/assets/underline.svg");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+.heading {
+  @apply relative text-[--secondary] text-4xl !leading-[1.25] md:text-5xl font-bold raleway mb-8 text-center;
+}
+.subheading {
+  @apply raleway font-medium text-lg;
+}
+
+.btn-outline {
+  @apply py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border border-[--primary] font-semibold bg-white text-[--primary] hover:bg-[--primaryAccent] hover:text-white focus:outline-none focus:ring-2 focus:ring-[--secondaryAccent] focus:ring-offset-2 transition-all text-xs min-w-[8rem] uppercase raleway;
+}
+
+.btn-fill-secondary {
+  @apply py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border border-[--secondary] font-semibold bg-[--secondary] text-white hover:text-[--secondary] hover:bg-transparent focus:outline-none focus:ring-2 focus:ring-[--secondaryAccent] focus:ring-offset-2 transition-all text-xs min-w-[8rem] uppercase raleway;
+}
+
+.btn-fill {
+  @apply py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-[--primary] text-white hover:bg-[--primaryAccent] focus:outline-none focus:ring-2 focus:ring-[--secondaryAccent] focus:ring-offset-2 transition-all text-xs min-w-[8rem] uppercase raleway;
+}
+
+.btn-fill-lg {
+  @apply py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-[--primary] text-white hover:bg-[--primaryAccent] focus:outline-none focus:ring-2 focus:ring-[--secondaryAccent] focus:ring-offset-2 transition-all text-sm min-w-[12rem] uppercase raleway;
+}
+.label {
+  @apply leading-7 text-sm text-gray-600;
+}
+
+.input {
+  @apply w-full bg-white rounded border border-gray-300 focus:border-[--secondary] focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out;
+}
+
+.filterBtn {
+  @apply py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border border-gray-600 font-semibold bg-white text-gray-600 hover:text-[--primary] hover:border-[--primary] focus:outline-none focus:ring-2 focus:ring-[--secondaryAccent] focus:ring-offset-2 transition-all text-xs min-w-[8rem] uppercase raleway;
+}
+.filterBtn-active {
+  @apply py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border border-[--primary] font-semibold text-[--primary]  focus:outline-none focus:ring-2 focus:ring-[--primaryAccent] focus:ring-offset-2 transition-all text-xs min-w-[8rem] uppercase raleway;
+}
+
+.mentorImage {
+  @apply grayscale hover:grayscale-0 transition-all;
+}
+
+.modalLoader {
+  aspect-ratio: 1;
+  height: 100%;
+  border: 5px solid #000000;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: none;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  display: block;
+  width: 45px;
+  height: 40px;
+  background: linear-gradient(
+      #0000 calc(1 * 100% / 6),
+      #fff 0 calc(3 * 100% / 6),
+      #0000 0
+    ),
+    linear-gradient(
+      #0000 calc(2 * 100% / 6),
+      #fff 0 calc(4 * 100% / 6),
+      #0000 0
+    ),
+    linear-gradient(
+      #0000 calc(3 * 100% / 6),
+      #fff 0 calc(5 * 100% / 6),
+      #0000 0
+    );
+  background-size: 10px 400%;
+  background-repeat: no-repeat;
+  animation: matrix 1s infinite linear;
+}
+@keyframes matrix {
+  0% {
+    background-position: 0% 100%, 50% 100%, 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%, 50% 0%, 100% 0%;
+  }
+}
+
+.ladder {
+  --duration: 5s;
+  font-size: 48px;
+  width: 7em;
+  height: 5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+/* balls */
+.ladder::before,
+.ladder::after {
+  content: "";
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  background-color: var(--primary);
+  border-radius: 50%;
+  bottom: 1em;
+  animation: var(--duration) infinite;
+  animation-name: jumpY, moveX, hideMe;
+  animation-timing-function: cubic-bezier(0.4, 1.7, 0.5, 1.2), ease, ease;
+}
+
+.ladder::before {
+  left: 0;
+  --direction: 1;
+}
+.ladder::after {
+  left: 6em;
+  --direction: -1;
+}
+
+.ladder::after {
+  animation-delay: calc(var(--duration) / 2 * -1);
+}
+
+@keyframes jumpY {
+  0%,
+  100% {
+    bottom: 1em;
+  }
+  10% {
+    bottom: 2em;
+  }
+  20% {
+    bottom: 3em;
+  }
+  30% {
+    bottom: 4em;
+  }
+  40% {
+    bottom: 5em;
+    animation-timing-function: ease;
+  }
+  50% {
+    bottom: 1em;
+  }
+}
+
+@keyframes moveX {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(calc(1 * 1.5em * var(--direction)));
+  }
+  20% {
+    transform: translateX(calc(2 * 1.5em * var(--direction)));
+  }
+  30% {
+    transform: translateX(calc(3 * 1.5em * var(--direction)));
+  }
+  40%,
+  50% {
+    transform: translateX(calc(4 * 1.5em * var(--direction)));
+  }
+}
+
+@keyframes hideMe {
+  50%,
+  100% {
+    visibility: hidden;
+  }
+}
+
+/* columns */
+.ladder span {
+  width: 1em;
+  height: calc(var(--n) * 1em);
+  background-color: var(--secondary);
+  border-radius: 0.1em;
+  animation: sort ease var(--duration) infinite;
+}
+
+@keyframes sort {
+  0%,
+  40%,
+  100% {
+    height: calc(var(--n) * 1em);
+  }
+  50%,
+  90% {
+    height: calc((6 - var(--n)) * 1em);
+  }
+}
+
+.ladder span:nth-child(1) {
+  --n: 1;
+}
+.ladder span:nth-child(2) {
+  --n: 2;
+}
+.ladder span:nth-child(3) {
+  --n: 3;
+}
+.ladder span:nth-child(4) {
+  --n: 4;
+}
+.ladder span:nth-child(5) {
+  --n: 5;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
