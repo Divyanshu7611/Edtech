@@ -35,7 +35,7 @@ async function sendMail(name, email) {
   const mailOptions = {
     from: "hardik@leveluphubs.com",
     to: email,
-    subject: "Hello from LevelUp",
+    subject: "Hello from Impact IT servicess",
     text: emailText,
     html: emailHtml,
   };
