@@ -1,6 +1,6 @@
 import { JWT } from "google-auth-library";
 
-import creds from "../../../config/secrets.json";
+// import creds from "../../../config/secrets.json";
 
 import { GoogleSpreadsheet } from "google-spreadsheet";
 
