@@ -2,7 +2,7 @@ import Navbar2 from "@/components/global/Navbar2";
 import React from "react";
 
 export const metadata = {
-  title: "Level-up || About",
+  title: "Impact IT services || About",
 };
 export default function page() {
   return (

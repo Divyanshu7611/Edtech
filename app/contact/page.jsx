@@ -3,7 +3,7 @@ import ContactMap from "@/components/contact/ContactMap";
 import Navbar2 from "@/components/global/Navbar2";
 
 export const metadata = {
-  title: "Level-up || Contact",
+  title: "Impact IT services || Contact",
 };
 
 export default function page() {

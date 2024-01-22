@@ -58,14 +58,14 @@ export default function Navbar2() {
       >
         <div className="flex items-center justify-between">
           <Link className="" href="#" aria-label="Brand" id="logo">
-            <img
+            {/* <img
               src="/assets/images/logo.png"
               alt=""
               className="w-32 md:w-40"
-            />
+            /> */}
           </Link>
           <Link className="hidden" href="#" aria-label="Brand" id="whiteLogo">
-            <img src="/assets/images/logo-white.png" alt="" className="w-40" />
+            {/* <img src="/assets/images/logo-white.png" alt="" className="w-40" /> */}
           </Link>
           <div className="sm:hidden">
             <button
