@@ -53,7 +53,9 @@ export default function ProgramPopup({ heading, index, data, image }) {
               alt=""
               className="rounded-2xl object-fit object-center object-cover ring-1 ring-[--primary]"
             />
+
             <div className="ring-1 ring-gray-400 rounded-2xl p-2 px-4 max-w-sm">
+              <h3>What you'll learn. </h3>
               {data.map((data) => (
                 <div className="py-1 flex gap-2 items-center" key={data.name}>
                   <span className="h-2 w-2 aspect-square rounded-full bg-gray-400"></span>
