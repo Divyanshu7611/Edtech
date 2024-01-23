@@ -3,6 +3,7 @@ const OTP = require("../models/OTP");
 const otpGenerator = require("otp-generator");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const mailSender = require("../utils/mailSender");
 require("dotenv").config();
 
 //sendOTP
@@ -223,10 +224,44 @@ exports.login = async (req, res) => {
 //changePassword
 //TODO: HOMEWORK
 exports.changePassword = async (req, res) => {
-  //get data from req body
-  //get oldPassword, newPassword, confirmNewPassowrd
-  //validation
-  //update pwd in DB
-  //send mail - Password updated
-  //return response
+  try {
+    //get data from req body
+    const { email, password } = req.body;
+    //get oldPassword, newPassword, confirmNewPassowrd
+    const { newPassword, confirmPassword } = req.body;
+
+    //validation
+    if (!newPassword || !confirmPassword) {
+      return res.json({
+        success: false,
+        message: "all fields are required",
+      });
+    }
+    if (newPassword !== confirmPassword) {
+      return res.status(401).json({
+        success: false,
+        message: "Password do not match",
+      });
+      //update pwd in DB
+      await User.findOneAndUpdate({ email: email });
+      //send mail - Password updated
+      await mailSender(
+        email,
+        "Password Changed",
+        `Password Changed Successfully`
+      );
+      //return response
+      return res.status(200).json({
+        success: true,
+        message: "Password Changed Successfully",
+      });
+    }
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({
+      success: false,
+      message: "Something went wrong password change failure",
+      error: error.message,
+    });
+  }
 };
