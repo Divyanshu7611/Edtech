@@ -1,8 +1,7 @@
 export const faq = [
   {
     question: "Is it an offline or online program?",
-    answer:
-      "Program will be in offline mode. All the classes will be offline, although the weekend masterclass or guest lectures can be online.",
+    answer: "Program will be in online mode. All the classes will be online",
   },
   {
     question: "Is there any application process?",

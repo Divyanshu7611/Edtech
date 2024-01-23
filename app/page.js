@@ -48,11 +48,11 @@ export default function Home() {
       <Hero />
       <Programs />
       <Benifits />
-      <Menotrs />
+      {/* <Menotrs /> */}
       <Partners />
       <Stats />
       <Learn />
-      <CTA />
+      {/* <CTA /> */}
       <Faq />
     </>
   );

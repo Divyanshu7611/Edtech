@@ -53,7 +53,7 @@ export default function Footer() {
                 Programs
               </Link>
             </li>
-            <li className="inline-block relative pr-8 last:pr-0 last-of-type:before:hidden before:absolute before:top-1/2 before:right-3 before:-translate-y-1/2 before:content-['/'] before:text-gray-300">
+            {/* <li className="inline-block relative pr-8 last:pr-0 last-of-type:before:hidden before:absolute before:top-1/2 before:right-3 before:-translate-y-1/2 before:content-['/'] before:text-gray-300">
               <Link
                 className="inline-flex gap-x-2 text-sm text-gray-200 hover:text-[--primary]"
                 href="https://growthlabs.leveluphubs.com/"
@@ -61,11 +61,12 @@ export default function Footer() {
               >
                 Growth Labs
               </Link>
-            </li>
+            </li> */}
             <li className="inline-block relative pr-8 last:pr-0 last-of-type:before:hidden before:absolute before:top-1/2 before:right-3 before:-translate-y-1/2 before:content-['/'] before:text-gray-300">
               <Link
                 className="inline-flex gap-x-2 text-sm text-gray-200 hover:text-[--primary]"
-                href="/about"
+                // href="/about"
+                href="#"
               >
                 About
               </Link>
@@ -118,9 +119,7 @@ export default function Footer() {
         </div>
         {/* <!-- End Grid --> */}
         <div className="text-gray-200 pt-6 flex flex-col-reverse md:flex-row gap-4 items-center justify-between border-t-[1px] border-t-gray-400">
-          <p>
-            &copy; 2023 Impact IT services™ | Nanda Learnings & Skill Pvt. Ltd.
-          </p>
+          <p>&copy; 2023 Impact IT services™</p>
           <ul className="text-center">
             <li className="inline-block relative pr-8 last:pr-0 last-of-type:before:hidden before:absolute before:top-1/2 before:right-3 before:-translate-y-1/2 before:content-['/'] before:text-gray-300">
               <Link

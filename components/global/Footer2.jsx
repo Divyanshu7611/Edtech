@@ -49,17 +49,22 @@ export default function Footer2() {
                         Programs
                       </Link>
                     </li>
-                    <li className="inline-block relative pr-8 last:pr-0 last-of-type:before:hidden before:absolute before:top-1/2 before:right-3 before:-translate-y-1/2 before:content-['/'] before:text-gray-300">
+                    {/* <li className="inline-block relative pr-8 last:pr-0 last-of-type:before:hidden before:absolute before:top-1/2 before:right-3 before:-translate-y-1/2 before:content-['/'] before:text-gray-300">
                       <Link
                         className=""
-                        href="https://growthlabs.leveluphubs.com/"
+                        href="#"
+                        // href="https://growthlabs.leveluphubs.com/"
                         target="blank"
                       >
                         Growth Labs
                       </Link>
-                    </li>
+                    </li> */}
                     <li className="inline-block relative pr-8 last:pr-0 last-of-type:before:hidden before:absolute before:top-1/2 before:right-3 before:-translate-y-1/2 before:content-['/'] before:text-gray-300">
-                      <Link className="" href="/about">
+                      <Link
+                        className=""
+                        // href="/about"
+                        href="#"
+                      >
                         About
                       </Link>
                     </li>

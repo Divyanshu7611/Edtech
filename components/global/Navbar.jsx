@@ -15,7 +15,7 @@ export default function Navbar() {
     },
     {
       title: "Growth Labs",
-      link: "https://growthlabs.leveluphubs.com/",
+      // link: "https://growthlabs.leveluphubs.com/",
     },
     {
       title: "Contact",

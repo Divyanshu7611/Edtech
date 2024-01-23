@@ -1,17 +1,18 @@
 export const programs = {
   all: [
-    // {
-    //   heading: "Full Stack Web Developement",
-    //   points: [
-    //     "Duration: 52 weeks",
-    //     "10+ modules covered",
-    //     "DSA for placement preparation",
-    //   ],
-    //   image: "fs",
-    //   index: 1,
-    //   students: 58,
-    //   data: "web",
-    // },
+    {
+      heading: "Full Stack Web Developement",
+      points: [
+        "Duration: 14 week or 3.5 months",
+
+        // "DSA for placement preparation",
+        "Course Fee:10000/-",
+      ],
+      image: "fs",
+      index: 1,
+      students: 58,
+      data: "web",
+    },
     // {
     //   heading: "Data Science & ML",
     //   points: [
@@ -28,7 +29,7 @@ export const programs = {
       heading: "Data Analytics",
       points: [
         " Duration: 12 week or 3 months",
-        "Fee: 6000/-",
+        "Course Fee: 6000/-",
         // "Include case study methods",
       ],
       image: "da",
@@ -40,7 +41,7 @@ export const programs = {
       heading: "Digital Marketing",
       points: [
         "Duration: 8 week or 2 month",
-        "Fee:3000/-",
+        "Course Fee:3000/-",
         // "Industry first approach",
       ],
       image: "dm",
@@ -49,26 +50,26 @@ export const programs = {
       data: "dm",
     },
   ],
-  // web: [
-  //   {
-  //     heading: "Full Stack Web Developement",
-  //     points: [
-  //       "Duration: 52 weeks",
-  //       "10+ modules covered",
-  //       "DSA for placement preparation",
-  //     ],
-  //     image: "fs",
-  //     index: 1,
-  //     students: 58,
-  //     data: "web",
-  //   },
-  // ],
+  web: [
+    {
+      heading: "Full Stack Web Developement",
+      points: [
+        "Duration: 14 week or 3.5 months",
+        // "DSA for placement preparation",
+        "Course Fee:10000/-",
+      ],
+      image: "fs",
+      index: 1,
+      students: 58,
+      data: "web",
+    },
+  ],
   dm: [
     {
       heading: "Digital Marketing",
       points: [
         "Duration: 8 week or 2 month",
-        "Fee:3000/-",
+        "Course Fee:3000/-",
         // "Industry first approach",
       ],
       image: "dm",
@@ -94,7 +95,7 @@ export const programs = {
       heading: "Data Analytics",
       points: [
         " Duration: 12 week or 3 months",
-        "Fee: 6000/-",
+        "Course Fee: 6000/-",
         // "Include case study methods",
       ],
       image: "da",

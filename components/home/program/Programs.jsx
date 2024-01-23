@@ -32,7 +32,7 @@ export default function Programs() {
           >
             All Programs
           </button>
-          {/* <button
+          <button
             className="filterBtn filterMark"
             id="web"
             onClick={(e) => {
@@ -48,7 +48,7 @@ export default function Programs() {
             }}
           >
             Web Development
-          </button> */}
+          </button>
           <button
             className="filterBtn filterMark"
             id="ds"

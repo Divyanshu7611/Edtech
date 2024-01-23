@@ -81,7 +81,7 @@ export const programPop = {
   ],
   web: [
     {
-      name: "Basics of Programming with Java",
+      name: " complete front end & back end",
       topics: [
         "Java Syntax and Data Types",
         "Input and Output Operations",
@@ -91,7 +91,7 @@ export const programPop = {
       ],
     },
     {
-      name: "Basic Fundamentals of Data Structures and Algorithms",
+      name: "complete data base Sql & mongo Db",
       topics: [
         "Algorithm Analysis",
         "Divide and Conquer",
@@ -107,7 +107,7 @@ export const programPop = {
       ],
     },
     {
-      name: "Fundamentals of frontend development",
+      name: "complete mern stack ( mongo db, react, express, node )",
       topics: [
         "HTML",
         "JavaScript Basics",
@@ -122,7 +122,7 @@ export const programPop = {
       ],
     },
     {
-      name: "Advance frontend development, introduction to AI augmented programming and development tools",
+      name: "DSA (data structure and algorithm)",
       topics: [
         "Terminal Commands",
         "States and Lifecycle",
@@ -136,7 +136,7 @@ export const programPop = {
       ],
     },
     {
-      name: "Advance JavaScript",
+      name: "doubt classes",
       topics: [
         "Functional Programming",
         "Asynchronous Programming",
@@ -147,7 +147,39 @@ export const programPop = {
       ],
     },
     {
-      name: "Advance Data Structure and Algorithm for MAANG (12 weeks)",
+      name: "regular assignment",
+      topics: [
+        "Data Structures and Algorithms",
+        "Graph Theory",
+        "List and Array",
+        "Number Theory",
+        "Stack",
+        "Bit Manipulation",
+        "Queue",
+        "Dijkstra's Algorithm",
+        "Heap",
+        "Greedy Algorithms",
+        "Dynamic Programming",
+      ],
+    },
+    {
+      name: "Expert lecture",
+      topics: [
+        "Data Structures and Algorithms",
+        "Graph Theory",
+        "List and Array",
+        "Number Theory",
+        "Stack",
+        "Bit Manipulation",
+        "Queue",
+        "Dijkstra's Algorithm",
+        "Heap",
+        "Greedy Algorithms",
+        "Dynamic Programming",
+      ],
+    },
+    {
+      name: "live session on how to get a job , resume , freelance , open source and more For interview",
       topics: [
         "Data Structures and Algorithms",
         "Graph Theory",

@@ -34,14 +34,17 @@ export default function ProgramPopup({ heading, index, data, image }) {
             </h3>
 
             <div className="ring-1 ring-gray-400 rounded-2xl p-4">
-              <p>8 Weeks</p>
+              {/* <p>8 Weeks</p> */}
               <p>Live Included</p>
             </div>
           </div>
           <div className="px-4 text-gray-600">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
-              laborum, sint sed inventore consequuntur aliquam.
+              Learn these skills now to grow your over all personality from well
+              known experts of their field. We are providing complete courses,
+              specifically and well-developed for students who are willing to
+              change the world, dreaming of becoming entrepreneurs and future
+              leaders.
             </p>
           </div>
           <div className="px-4 py-2 overflow-y-auto flex flex-col md:flex-row items-stretch gap-4 flex-wrap">
