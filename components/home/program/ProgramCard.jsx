@@ -97,12 +97,22 @@ export default function ProgramCard({
                 </li>
               ))}
           </ul>
-          <button
-            data-hs-overlay={`#hs-${index}`}
-            className="flex gap-2 items-center justify-center btn-fill-secondary mt-4"
-          >
-            Know More <AiOutlineArrowRight />
-          </button>
+          <div className="flex justify-between">
+            <div>
+              <button
+                data-hs-overlay={`#hs-${index}`}
+                className="flex gap-2 items-center justify-center btn-fill-secondary mt-4"
+              >
+                Know More <AiOutlineArrowRight />
+              </button>
+            </div>
+            <Link
+              className="flex gap-2 items-center justify-center btn-fill-secondary mt-4"
+              href="https://forms.gle/ugDehPTR52iRUFns6"
+            >
+              Apply Now
+            </Link>
+          </div>
         </div>
       </div>
       <ProgramPopup index={index} heading={heading} data={data} image={image} />
