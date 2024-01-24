@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -24,9 +25,12 @@ export default function Hero() {
           creators, and placement support will help you achieve your goals and
           reach new heights. Join us at our Hubs and experience the difference!!
         </p>
-        <button className="btn-fill-lg" data-hs-overlay="#hs-modal-signup">
+        <Link
+          className="btn-fill-lg"
+          href="https://forms.gle/ugDehPTR52iRUFns6"
+        >
           Impact IT services
-        </button>
+        </Link>
       </div>
       {/* <div className="ladder">
         <span></span>

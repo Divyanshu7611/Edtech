@@ -49,9 +49,9 @@ export default function Home() {
       <Programs />
       <Benifits />
       {/* <Menotrs /> */}
-      <Partners />
+      {/* <Partners /> */}
       <Stats />
-      <Learn />
+      {/* <Learn /> */}
       {/* <CTA /> */}
       <Faq />
     </>

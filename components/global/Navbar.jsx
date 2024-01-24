@@ -13,10 +13,10 @@ export default function Navbar() {
       title: "Programs",
       link: "#programs",
     },
-    {
-      title: "Growth Labs",
-      // link: "https://growthlabs.leveluphubs.com/",
-    },
+    // {
+    //   title: "Growth Labs",
+    //   // link: "https://growthlabs.leveluphubs.com/",
+    // },
     {
       title: "Contact",
       link: "/contact",
@@ -115,21 +115,34 @@ export default function Navbar() {
                 {link.title}
               </a>
             ))}
-            <a className="flex sm:hidden items-center sm:my-4" href="#">
+            {/* <a className="flex sm:hidden items-center sm:my-4" href="#">
               <span className="btn-fill-lg" data-hs-overlay="#hs-modal-signup">
                 Get Started
               </span>
-            </a>
+            </a> */}
+            <Link
+              className="flex sm:hidden items-center sm:my-4"
+              href="https://forms.gle/ugDehPTR52iRUFns6"
+            >
+              <span className="btn-fill-lg">Get Started</span>
+            </Link>
           </div>
         </div>
-        <a
+        {/* <a
           className="hidden sm:inline-block items-center font-medium sm:my-4"
           href="#"
         >
           <span className="btn-fill-lg" data-hs-overlay="#hs-modal-signup">
             Get Started
           </span>
-        </a>
+        </a> */}
+
+        <Link
+          className="hidden sm:inline-block items-center font-medium sm:my-4"
+          href="https://forms.gle/ugDehPTR52iRUFns6"
+        >
+          <span className="btn-fill-lg">Get Started</span>
+        </Link>
       </nav>
     </header>
   );
