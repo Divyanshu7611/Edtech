@@ -3,7 +3,7 @@ export const programs = {
     {
       heading: "Full Stack Web Developement",
       points: [
-        "Duration: 3.5 Months",
+        "Duration: 4.5 Months",
 
         // "DSA for placement preparation",
         "Course Fee:10000/-",
@@ -54,7 +54,7 @@ export const programs = {
     {
       heading: "Full Stack Web Developement",
       points: [
-        "Duration: 3.5 Months",
+        "Duration: 4.5 Months",
         // "DSA for placement preparation",
         "Course Fee:10000/-",
       ],
