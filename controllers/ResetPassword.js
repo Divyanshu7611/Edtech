@@ -31,7 +31,7 @@ exports.resetPasswordToken = async (req, res) => {
     const url = `http://localhost:3000/update-password/${token}`;
     await mailSender(email, "Password-ResetLink", `Password-ResetLink:${url}`);
 
-    return res.status(200).json({
+    res.status(200).json({
       success: true,
       message: "Mail Sent Successfully",
     });
@@ -80,7 +80,7 @@ exports.resetPassword = async (req, res) => {
     // password hasing
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    return res.status(200).json({
+    res.status(200).json({
       success: true,
       message: "Password Changed Succefully",
     });
