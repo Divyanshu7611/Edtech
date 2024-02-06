@@ -133,7 +133,17 @@ exports.signUp = async (req, res) => {
 
     //Hash password
     const hashedPassword = await bcrypt.hash(password, 10);
+    // Create the user
+    let approved = "";
+    approved === "Instructor" ? (approved = false) : (approved = true);
 
+    // Create the Additional Profile For User
+    const profileDetails = await Profile.create({
+      gender: null,
+      dateOfBirth: null,
+      about: null,
+      contactNumber: null,
+    });
     //entry create in DB
 
     const user = await User.create({
@@ -142,8 +152,9 @@ exports.signUp = async (req, res) => {
       email,
       contactNumber,
       password: hashedPassword,
-      accountType,
+      accountType: accountType,
       additionalDetails: profileDetails._id,
+      approved: approved,
       image: `https://api.dicebear.com/5.x/initials/svg?seed=${firstname} ${lastName}`,
     });
 
@@ -225,42 +236,71 @@ exports.login = async (req, res) => {
 //TODO: HOMEWORK
 exports.changePassword = async (req, res) => {
   try {
-    //get data from req body
-    const { email, password } = req.body;
-    //get oldPassword, newPassword, confirmNewPassowrd
-    const { newPassword, confirmPassword } = req.body;
+    // Get user data from req.user
+    const userDetails = await User.findById(req.user.id);
 
-    //validation
-    if (!newPassword || !confirmPassword) {
-      return res.json({
+    // Get old password, new password, and confirm new password from req.body
+    const { oldPassword, newPassword, confirmNewPassword } = req.body;
+
+    // Validate old password
+    const isPasswordMatch = await bcrypt.compare(
+      oldPassword,
+      userDetails.password
+    );
+    if (!isPasswordMatch) {
+      // If old password does not match, return a 401 (Unauthorized) error
+      return res
+        .status(401)
+        .json({ success: false, message: "The password is incorrect" });
+    }
+
+    // Match new password and confirm new password
+    if (newPassword !== confirmNewPassword) {
+      // If new password and confirm new password do not match, return a 400 (Bad Request) error
+      return res.status(400).json({
         success: false,
-        message: "all fields are required",
+        message: "The password and confirm password does not match",
       });
     }
-    if (newPassword !== confirmPassword) {
-      return res.status(401).json({
-        success: false,
-        message: "Password do not match",
-      });
-      //update pwd in DB
-      await User.findOneAndUpdate({ email: email });
-      //send mail - Password updated
-      await mailSender(
-        email,
-        "Password Changed",
-        `Password Changed Successfully`
+
+    // Update password
+    const encryptedPassword = await bcrypt.hash(newPassword, 10);
+    const updatedUserDetails = await User.findByIdAndUpdate(
+      req.user.id,
+      { password: encryptedPassword },
+      { new: true }
+    );
+
+    // Send notification email
+    try {
+      const emailResponse = await mailSender(
+        updatedUserDetails.email,
+        passwordUpdated(
+          updatedUserDetails.email,
+          `Password updated successfully for ${updatedUserDetails.firstName} ${updatedUserDetails.lastName}`
+        )
       );
-      //return response
-      return res.status(200).json({
-        success: true,
-        message: "Password Changed Successfully",
+      console.log("Email sent successfully:", emailResponse.response);
+    } catch (error) {
+      // If there's an error sending the email, log the error and return a 500 (Internal Server Error) error
+      console.error("Error occurred while sending email:", error);
+      return res.status(500).json({
+        success: false,
+        message: "Error occurred while sending email",
+        error: error.message,
       });
     }
+
+    // Return success response
+    return res
+      .status(200)
+      .json({ success: true, message: "Password updated successfully" });
   } catch (error) {
-    console.log(error);
+    // If there's an error updating the password, log the error and return a 500 (Internal Server Error) error
+    console.error("Error occurred while updating password:", error);
     return res.status(500).json({
       success: false,
-      message: "Something went wrong password change failure",
+      message: "Error occurred while updating password",
       error: error.message,
     });
   }
