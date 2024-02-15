@@ -1,0 +1,26 @@
+/* write your css here */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  overflow-x: hidden;
+}
+.heroVideo {
+  filter: drop-shadow(16px 16px white);
+}
+
+.backShadow {
+  width: 100px;
+  height: 100px;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  opacity: 50%;
+  z-index: -1;
+  box-shadow: 0 0 20px 15px pink;
+}
+
+.bgFrame {
+  background-image: url("./assets/Images/bghome.svg");
+}
