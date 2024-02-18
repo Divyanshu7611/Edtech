@@ -5,12 +5,14 @@ import HeadingText from "../Components/Core/HomePage/HeadingText";
 import ButtonComp from "../Components/Core/HomePage/ButtonComp";
 import HeroVideo from "../assets/Images/banner.mp4";
 import CodeBlock from "../Components/Core/HomePage/CodeBlock";
+import SkillSection from "../Components/Core/HomePage/SkillSection";
+import ProgressSection from "../Components/Core/HomePage/ProgressSection";
 
 const Home = () => {
   return (
     <div>
       {/* Heading Seciton */}
-      <div className="text-white relative max-w-maxContent w-11/12 justify-center items-center flex flex-col mx-auto border">
+      <div className="text-white relative max-w-maxContent w-11/12 justify-center items-center flex flex-col mx-auto">
         <Link to="/signup">
           <div className="text-richblack-200 w-fit shadow-richblack-200 mt-16 hover:scale-95 transition-all duration-200 group rounded-full font-bold bg-richblack-800 group">
             <div className="flex justify-between rounded-full px-5 py-3 items-center group-hover:bg-richblack-900">
@@ -122,7 +124,7 @@ const Home = () => {
         </div>
       </div>
       {/* fd */}
-      <div className="w-full bg-white">
+      <div className="w-full bg-[#F9F9F9]">
         <div className="bgFrame h-[310px] flex justify-center items-center">
           <div
             className="w-fit mx-auto flex gap-5
@@ -144,6 +146,11 @@ const Home = () => {
               link={"/signup"}
             />
           </div>
+        </div>
+        {/* Skill Section */}
+        <div className="lg:w-[75em] mx-auto p-5 lg:p-0">
+          <SkillSection />
+          <ProgressSection />
         </div>
       </div>
     </div>

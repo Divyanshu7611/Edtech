@@ -24,3 +24,13 @@ body {
 .bgFrame {
   background-image: url("./assets/Images/bghome.svg");
 }
+
+.Timeline {
+  background-image: url("./assets/Images/TimelineImage.png");
+  object-fit: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  max-width: 714px;
+  height: 545px;
+  min-width: 358px;
+}
