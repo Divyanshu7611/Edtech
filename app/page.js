@@ -1,17 +1,17 @@
 "use client";
 
-import Loader from "@/components/global/Loader";
-import Navbar from "@/components/global/Navbar";
-import CTA from "@/components/home/CTA";
-import Faq from "@/components/home/Faq";
-import Hero from "@/components/home/Hero";
-import Partners from "@/components/home/Partners";
-import Stats from "@/components/home/Stats";
-import Benifits from "@/components/home/benifit/Benifits";
-import Learn from "@/components/home/learn/Learn";
-import Menotrs from "@/components/home/mentors/Mentors";
-import News from "@/components/home/news/News";
-import Programs from "@/components/home/program/Programs";
+import Loader from "../components/global/Loader";
+import Navbar from "../components/global/Navbar";
+import CTA from "../components/home/CTA";
+import Faq from "../components/home/Faq";
+import Hero from "../components/home/Hero";
+import Partners from "../components/home/Partners";
+import Stats from "../components/home/Stats";
+import Benifits from "../components/home/benifit/Benifits";
+import Learn from "../components/home/learn/Learn";
+import Menotrs from "../components/home/mentors/Mentors";
+import News from "../components/home/news/News";
+import Programs from "../components/home/program/Programs";
 import { useEffect, useState } from "react";
 
 import "swiper/css";
@@ -43,7 +43,7 @@ export default function Home() {
     <>
       <Navbar />
 
-      {!loaded && <Loader />}
+      {/* {!loaded && <Loader />} */}
 
       <Hero />
       <Programs />

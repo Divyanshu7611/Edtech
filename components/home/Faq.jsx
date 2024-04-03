@@ -1,4 +1,4 @@
-import { faq } from "@/data/faq";
+import { faq } from "../../data/faq";
 import React from "react";
 import FAQCard from "./faq/FAQCard";
 

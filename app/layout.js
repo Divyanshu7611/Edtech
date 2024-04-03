@@ -1,7 +1,7 @@
 // import Navbar from "@/components/global/Navbar";
 import "./globals.css";
-import Footer from "@/components/global/Footer";
-import RegisterModal from "@/components/global/RegisterModal";
+import Footer from "../components/global/Footer";
+import RegisterModal from "../components/global/RegisterModal";
 
 export const metadata = {
   title: "Impact IT services",

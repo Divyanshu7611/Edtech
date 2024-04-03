@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import ProgramCardSection from "./ProgramCardSection";
-import { programs } from "../../../data/programs";
+import { programs } from "../../../data/intern";
 
 export default function Programs() {
   const [currentData, setCurrentData] = useState(programs.all);
@@ -12,7 +12,7 @@ export default function Programs() {
       id="programs"
     >
       <div className="heading">
-        <span className="pinkline">Programs</span> we offer
+        <span className="pinkline">Internships</span> we offer
       </div>
       <div className="">
         <div className="flex items-center justify-center mb-8 gap-4 flex-wrap">
@@ -47,7 +47,7 @@ export default function Programs() {
               e.target.classList.add("filterBtn-active");
             }}
           >
-            Web Development
+            Full Stack Development
           </button>
           <button
             className="filterBtn filterMark"

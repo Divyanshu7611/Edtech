@@ -21,6 +21,10 @@ export default function Navbar() {
       title: "Contact",
       link: "/contact",
     },
+    {
+      title: "Internships",
+      link: "/internship",
+    },
   ];
 
   React.useEffect(() => {

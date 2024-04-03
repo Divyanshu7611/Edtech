@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // import required modules
 import { Navigation, Pagination } from "swiper/modules";
 import MenotrCard from "./MentorCard";
-import { mentors } from "@/data/mentors";
+import { mentors } from "../../../data/mentors";
 
 export default function Menotrs() {
   return (
