@@ -1,6 +1,6 @@
-import ContactForm from "@/components/contact/ContactForm";
-import ContactMap from "@/components/contact/ContactMap";
-import Navbar2 from "@/components/global/Navbar2";
+import ContactForm from "../../components/contact/ContactForm";
+import ContactMap from "../../components/contact/ContactMap";
+import Navbar2 from "../../components/global/Navbar2";
 
 export const metadata = {
   title: "Impact IT services || Contact",

@@ -1,4 +1,4 @@
-import Navbar2 from "@/components/global/Navbar2";
+import Navbar2 from "../../components/global/Navbar2";
 import React from "react";
 
 export const metadata = {
