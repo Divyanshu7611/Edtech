@@ -4,13 +4,14 @@ import QRCode from "qrcode.react";
 
 const QRCodeComponent = () => {
   // UPI details
-  const upiId = "9950156755@ibl";
-  const amount = "1500";
+  const upiId = "9928637836@ybl";
+  const amount = "2499";
+  const businessName = "Impact It Services";
 
   // Generate payment URL
   const paymentUrl = `upi://pay?pa=${encodeURIComponent(
     upiId
-  )}&am=${amount}&cu=INR`;
+  )}&am=${amount}&pn=${encodeURIComponent(businessName)}&cu=INR`;
 
   return (
     <div>
