@@ -21,13 +21,13 @@ export default async function POST(req, res) {
     }
 
     // Verification
-    const user = await User.findOne({ email });
-    if (user) {
-      return res.status(403).json({
-        success: false,
-        message: "User already exists",
-      });
-    }
+    // const user = await User.findOne({ email });
+    // if (user) {
+    //   return res.status(403).json({
+    //     success: false,
+    //     message: "User already exists",
+    //   });
+    // }
 
     const newUser = await User.create({
       Name,
