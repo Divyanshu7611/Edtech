@@ -99,12 +99,12 @@ export default function ProgramCard({
           </ul>
           <div className="flex justify-between">
             <div>
-              <button
-                data-hs-overlay={`#hs-${index}`}
+              <a
+                href="https://drive.google.com/file/d/1OgRf2t-J0FermcPdeV_npN3gew8qWqN7/view?usp=sharing"
                 className="flex gap-2 items-center justify-center btn-fill-secondary mt-4"
               >
                 Know More <AiOutlineArrowRight />
-              </button>
+              </a>
             </div>
             <Link
               className="flex gap-2 items-center justify-center btn-fill-secondary mt-4"

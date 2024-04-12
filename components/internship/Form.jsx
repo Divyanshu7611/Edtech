@@ -45,12 +45,12 @@ function Form() {
       } else {
         console.error("Error sending data:", response.status);
         setSubmitStatus("error"); // Set submit status to error
-        setSubmitted(true);
+        // setSubmitted(true);
       }
     } catch (error) {
       console.error("Error:", error);
       setSubmitStatus("error");
-      setSubmitted(true);
+      // setSubmitted(true);
     }
   };
 
@@ -62,16 +62,16 @@ function Form() {
           <h1>Form Submitted Successfully</h1>
         </div>
       )} */}
-      {/* {submitStatus === "error" && ( // Render the error alert if submitStatus is error
+      {submitStatus === "error" && ( // Render the error alert if submitStatus is error
         <div
           variant="filled"
           severity="error"
           className="alert transition-all duration-200 scale-125"
         >
           <ImCross className="text-6xl border-2 rounded-full border-black p-1" />
-          <h1>Already Submitted the Form</h1>
+          <h1>Something Wrong! try again later</h1>
         </div>
-      )} */}
+      )}
       {submitted === false && (
         <form
           onSubmit={HandleSubmit}
@@ -87,7 +87,6 @@ function Form() {
                   <input
                     type="text"
                     name="Name"
-                    placeholder="John Doe"
                     value={formData.Name}
                     onChange={handleChange}
                     required
@@ -103,7 +102,6 @@ function Form() {
                 <td>
                   <input
                     type="email"
-                    placeholder="JohnDoe@gmail.com"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
@@ -121,7 +119,6 @@ function Form() {
                   <input
                     type="number"
                     name="Phone"
-                    placeholder="1234567890"
                     value={formData.Phone}
                     onChange={handleChange}
                     required
@@ -140,7 +137,6 @@ function Form() {
                     name="CollegeName"
                     value={formData.CollegeName}
                     onChange={handleChange}
-                    placeholder="XYZ"
                     required
                     disabled={submitted}
                     className="border-2 border-black w-full"
@@ -155,7 +151,6 @@ function Form() {
                   <input
                     type="text"
                     name="Branch"
-                    placeholder="any"
                     value={formData.Branch}
                     onChange={handleChange}
                     required
@@ -173,7 +168,6 @@ function Form() {
                     type="text"
                     name="Year"
                     value={formData.Year}
-                    placeholder="2026"
                     onChange={handleChange}
                     required
                     disabled={submitted}
@@ -218,7 +212,7 @@ function Form() {
         </form>
       )}
 
-      {submitted === true && (
+      {submitStatus === "success" && (
         <div className="flex shadow-2xl bg-slate-200 flex-col justify-center max-w-md mx-auto mt-36 mb-24 border-4 border-black p-10 rounded-xl">
           <Payment formData={formData} />
         </div>

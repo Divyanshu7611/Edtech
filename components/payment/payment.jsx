@@ -65,7 +65,7 @@ const Payment = ({ formData }) => {
           className="alert transition-all duration-200 scale-125"
         >
           <ImCross className="text-6xl border-2 rounded-full border-black p-1" />
-          <h1>Already Submitted the Form</h1>
+          <h1>Transaction id Already Exist</h1>
         </div>
       )}
       <h1 className="text-xl font-bold mb-5">Make Payment</h1>

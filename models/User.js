@@ -38,4 +38,6 @@ const RegistrationSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("User", RegistrationSchema);
+const userReg = mongoose.model("User", RegistrationSchema);
+
+export default userReg;

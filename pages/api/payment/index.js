@@ -1,5 +1,6 @@
 import Payment from "../../../models/upi";
 import { ConnectMongoDB, DisconnectMongoDB } from "../../../config/dbConnect";
+import { error } from "console";
 
 export default async function POST(req, res) {
   if (req.method !== "POST") {
@@ -18,7 +19,13 @@ export default async function POST(req, res) {
         message: "Please fill all details",
       });
     }
-
+    const existId = await Payment.findOne({ TxnID });
+    if (existid) {
+      return res.status(403).json({
+        success: false,
+        message: "User already Payment",
+      });
+    }
     const newUser = await Payment.create({
       TxnID: TxnID,
       email: email,
