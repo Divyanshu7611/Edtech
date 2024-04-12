@@ -20,7 +20,7 @@ export default async function POST(req, res) {
       });
     }
     const existId = await Payment.findOne({ TxnID });
-    if (existid) {
+    if (existId) {
       return res.status(403).json({
         success: false,
         message: "User already Payment",
