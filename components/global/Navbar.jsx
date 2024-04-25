@@ -19,7 +19,7 @@ export default function Navbar() {
     // },
     {
       title: "Contact",
-      link: "/contact",
+      link: "/",
     },
     {
       title: "Internships",
