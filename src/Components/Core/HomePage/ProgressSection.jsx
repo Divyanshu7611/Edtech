@@ -1,5 +1,9 @@
 import React from "react";
 import HeadingText from "./HeadingText";
+import photo1 from "../../../assets/Images/Know_your_progress.svg";
+import photo2 from "../../../assets/Images/Compare_with_others.svg";
+import photo3 from "../../../assets/Images/Plan_your_lessons.svg";
+import ButtonComp from "./ButtonComp";
 
 const ProgressSection = () => {
   return (
@@ -12,6 +16,23 @@ const ProgressSection = () => {
         realistic voice-over,<br></br> progress tracking, custom schedule and
         more.
       </p>
+      {/* /////photo sectionm */}
+      <div className="flex flex-col lg:flex-row justify-center items-center">
+        <img src={photo1} alt="" className="relative lg:left-28 -z-0" />
+        <img
+          src={photo2}
+          alt=""
+          className="z-10 relative bottom-12 lg:bottom-0"
+        />
+        <img
+          src={photo3}
+          alt=""
+          className="relative lg:right-36 z-20 bottom-32 lg:bottom-0"
+        />
+      </div>
+      <div>
+        <ButtonComp children={"Learn More"} active={true} link={"/signup"} />
+      </div>
     </div>
   );
 };

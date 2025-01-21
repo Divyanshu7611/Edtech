@@ -7,11 +7,15 @@ import HeroVideo from "../assets/Images/banner.mp4";
 import CodeBlock from "../Components/Core/HomePage/CodeBlock";
 import SkillSection from "../Components/Core/HomePage/SkillSection";
 import ProgressSection from "../Components/Core/HomePage/ProgressSection";
+import Instructor from "../assets/Images/Instructor.png";
+import Cards from "../Components/Core/HomePage/Cards";
+import Footer from "../Components/global/Footer";
 
 const Home = () => {
   return (
     <div>
       {/* Heading Seciton */}
+      {/* <p className="text-xl">Hello Jee</p> */}
       <div className="text-white relative max-w-maxContent w-11/12 justify-center items-center flex flex-col mx-auto">
         <Link to="/signup">
           <div className="text-richblack-200 w-fit shadow-richblack-200 mt-16 hover:scale-95 transition-all duration-200 group rounded-full font-bold bg-richblack-800 group">
@@ -124,6 +128,9 @@ const Home = () => {
         </div>
       </div>
       {/* fd */}
+      <div className="max-w-maxContent w-11/12 justify-center mx-auto">
+        <Cards />
+      </div>
       <div className="w-full bg-[#F9F9F9]">
         <div className="bgFrame h-[310px] flex justify-center items-center">
           <div
@@ -151,6 +158,26 @@ const Home = () => {
         <div className="lg:w-[75em] mx-auto p-5 lg:p-0">
           <SkillSection />
           <ProgressSection />
+        </div>
+      </div>
+      {/* become a instructor section */}
+      <div className="flex justify-between w-11/12 mx-auto">
+        <div className="w-1/2">
+          <img
+            src={Instructor}
+            alt=""
+            className="max-h-[545px] max-w-[616px]"
+          />
+        </div>
+        <div className="w-1/2 flex flex-col items-center">
+          <div className="text-4xl font-semibold">
+            Become an<br></br>
+            <HeadingText text={"instructor"} />
+          </div>
+          <p className="font-medium text-base text-richblack-300">
+            Instructors from around the world teach millions of students on
+            StudyNotion. We provide the tools and skills to teach what you love.
+          </p>
         </div>
       </div>
     </div>

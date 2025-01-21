@@ -7,6 +7,7 @@ html,
 body {
   overflow-x: hidden;
 }
+
 .heroVideo {
   filter: drop-shadow(16px 16px white);
 }
@@ -33,4 +34,83 @@ body {
   max-width: 714px;
   height: 545px;
   min-width: 358px;
+}
+
+
+.gradient-text {
+  background: linear-gradient(to right, #E65C00, #F9D423);
+  /* Replace with your desired gradient */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+.gradient-text2 {
+  background: linear-gradient(to right, #833AB4, #FD1D1D, #FCB045);
+  /* Replace with your desired gradient */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text3 {
+  background: linear-gradient(to right, #E65C00, #F9D423);
+  /* Replace with your desired gradient */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+.gradient-text4 {
+  background: linear-gradient(to right, #1FA2FF, #12D8FA, #A6FFCB);
+  /* Replace with your desired gradient */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+.loader {
+  color: #FFF;
+  position: relative;
+  font-size: 11px;
+  background: #FFF;
+  animation: escaleY 1s infinite ease-in-out;
+  width: 1em;
+  height: 4em;
+  animation-delay: -0.16s;
+}
+
+.loader:before,
+.loader:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 2em;
+  background: #FFF;
+  width: 1em;
+  height: 4em;
+  animation: escaleY 1s infinite ease-in-out;
+}
+
+.loader:before {
+  left: -2em;
+  animation-delay: -0.32s;
+}
+
+@keyframes escaleY {
+
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0;
+    height: 4em;
+  }
+
+  40% {
+    box-shadow: 0 -2em;
+    height: 5em;
+  }
 }
