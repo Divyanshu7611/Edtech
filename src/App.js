@@ -9,6 +9,7 @@ import Login from "./Pages/Login";
 import About from "./Pages/About";
 import PasswordForget from "./Pages/PasswordForget";
 import Otp from "./Pages/Otp";
+import Dashboard from "./Pages/Dashboard";
 
 function App() {
   return (
@@ -31,6 +32,13 @@ function App() {
       </Routes>
       <Routes>
         <Route path="/otp-verification" element={<Otp />} />
+      </Routes>
+
+
+
+      {/* Dashboard */}
+      <Routes>
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
       <Footer />
     </div>
