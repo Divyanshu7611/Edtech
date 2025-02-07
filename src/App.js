@@ -10,6 +10,7 @@ import About from "./Pages/About";
 import PasswordForget from "./Pages/PasswordForget";
 import Otp from "./Pages/Otp";
 import Dashboard from "./Pages/Dashboard";
+import Profile from "./Pages/dashboard/Profile";
 
 function App() {
   return (
@@ -38,7 +39,19 @@ function App() {
 
       {/* Dashboard */}
       <Routes>
-        <Route path="/dashboard" element={<Dashboard />} />
+        {/* <Route path="/dashboard" element={<Dashboard />} /> */}
+        <Route element={<Dashboard />} path="/dashboard">
+        {/* Nested Routing */}
+        <Route path="my-profile" index element={<Profile />} />
+        <Route path="my-courses" element={<Dashboard />} />
+        <Route path="add-course" element={<Dashboard />} />
+        <Route path="enrolled-courses" element={<Dashboard />} />
+        <Route path="courses" element={<Dashboard />} />
+        <Route path="purchase-history" element={<Dashboard />} />
+        <Route path="wishlist" element={<Dashboard />} />
+        <Route path="settings" element={<Dashboard />} />
+        </Route>
+
       </Routes>
       <Footer />
     </div>

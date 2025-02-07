@@ -5,6 +5,9 @@ import { NavbarLinks } from "../../data/navbar-links";
 import { IoIosArrowDropdownCircle } from "react-icons/io";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
+import { useSelector } from "react-redux";
+import { IoSearch } from "react-icons/io5";
+import { MdOutlineShoppingCart } from "react-icons/md";
 
 function Navbar() {
   const subLinks = [
@@ -17,7 +20,7 @@ function Navbar() {
       link: "/catalog/web-development",
     },
   ];
-
+  const { user } = useSelector((state) => state.profile)
   const location = useLocation();
   const matchRoute = (route) => {
     return matchPath({ path: route }, location.pathname);
@@ -69,11 +72,10 @@ function Navbar() {
                   ) : (
                     <Link to={link?.path}>
                       <p
-                        className={`${
-                          matchRoute(link?.path)
+                        className={`${matchRoute(link?.path)
                             ? "text-yellow-25"
                             : "text-richblack-25"
-                        }`}
+                          }`}
                       >
                         {link.title}
                       </p>
@@ -84,15 +86,41 @@ function Navbar() {
             </ul>
           </nav>
           <div className="flex gap-2">
-            <button className="border border-[#2C333F] rounded-lg px-5 py-2 text-[#AFB2BF] text-base font-medium">
-              <Link to="/login">Login</Link>
-            </button>
-            <button className="border border-[#2C333F] rounded-lg px-3 py-2 text-[#AFB2BF] text-base font-medium">
-              <Link to="/signup">Sign Up</Link>
-            </button>
+            {
+              !user && (
+                <div>
+
+                  <button className="border border-[#2C333F] rounded-lg px-5 py-2 text-[#AFB2BF] text-base font-medium">
+                    <Link to="/login">Login</Link>
+                  </button>
+                  <button className="border border-[#2C333F] rounded-lg px-3 py-2 text-[#AFB2BF] text-base font-medium">
+                    <Link to="/signup">Sign Up</Link>
+                  </button>
+                </div>
+              )
+            }
+            {
+              user && (
+                <div className="flex gap-x-3 justify-center items-center">
+                      <div><IoSearch className="text-[#999DAA] h-6 w-6"/></div>
+                      <div>
+                        <Link to="/cart">
+                        <MdOutlineShoppingCart className="text-[#999DAA] h-6 w-6"/>
+                        </Link>
+                        </div>
+                      <div>
+                        <Link to="/dashboard">
+                                <img src={user?.image} alt="NAN" className="h-8 w-8 rounded-full" />
+                        </Link>
+                        </div>
+                </div>
+              )
+            }
           </div>
-        </div>
+        
+      </div>
       )}
+      {/* </div> */}
       {/* small sceen navbar */}
       {smallScreen && (
         <div className="flex max-w-maxContent mx-auto justify-between items-center w-full px-3">
