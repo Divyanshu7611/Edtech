@@ -5,22 +5,18 @@ const User = require("../models/User");
 //auth
 exports.auth = async (req, res, next) => {
   try {
-    //extract token
-    // const token = req.cookies.token
-    //                 || req.body.token
-    //                 || req.header("Authorisation").replace("Bearer ", "");
-
+  
     const token =
-      req.cookies.token ||
-      req.body.token ||
-      (req.header("Authorization") &&
-        req.header("Authorization").replace("Bearer ", ""));
+      req.cookies?.token ||
+      req.body?.token ||
+      (req.header("Authorization")?.startwith("Bearer ") ?
+        req.header("Authorization").split(" ")[1] : null);
 
     //if token missing, then return response
     if (!token) {
       return res.status(401).json({
         success: false,
-        message: "TOken is missing",
+        message: "Token is missing",
       });
     }
 

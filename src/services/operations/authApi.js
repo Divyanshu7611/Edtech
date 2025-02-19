@@ -2,9 +2,9 @@ import { toast } from "react-hot-toast";
 
 import { setLoading, setToken } from "../../slices/authSlice";
 import { resetCart } from "../../slices/cartSlice";
-import { setUser } from "../../slices/profileSlice";
+import { setUser,setProfileLoading } from "../../slices/profileSlice";
 import { apiConnector } from "../apiConnector";
-import { endpoints } from "../apis";
+import { endpoints,profileEndpoints } from "../apis";
 
 const {
   SENDOTP_API,
@@ -13,6 +13,7 @@ const {
   RESETPASSTOKEN_API,
   RESETPASSWORD_API,
 } = endpoints;
+const {CHANGE_PROFILE_IMAGE} = profileEndpoints
 
 export function sendOtp(email, navigate) {
   console.log('we here',email)
@@ -187,4 +188,30 @@ export function resetPassword(password, confirmPassword, token) {
 
 // update image
 
-// export function updateImage()
+export function updateImage(formData){
+  // console.log(typeof localStorage);
+ 
+
+  return async (dispatch) => {
+    dispatch(setProfileLoading(true))
+    try {
+      const response = await apiConnector({method:"PUT",url:CHANGE_PROFILE_IMAGE,bodyData:{formData},header:{"Content-Type":"multipart/form-data"}})
+      console.log("check")
+
+      console.log("UPLOAD IMAGE RESPONSE ... ", response);
+
+   
+        if (!response.data.success) {
+          throw new Error(response.data.message || "Image Upload Failure");
+        }
+
+      toast.success("Profile Changed Successfully")
+
+      
+    } catch (error) {
+      console.log("PROFILE PICTURE UPDATE FAILURE....",error)
+      toast.error("Profile Change Failure")
+    }
+  }
+
+}

@@ -103,7 +103,24 @@ exports.getAllUserDetails = async (req, res) => {
 
 exports.updateImage = async (req, res) => {
   try {
-    const userId = await User.findById({ _id: id });
+    const id = req.user?.id || req.params?.id || req.body?.id;
+    if(!id){
+      console.log("user id is ",id)
+      return res.status(401).json({
+        success:false,
+        message:"User must be authenticated, Please login"
+      })
+    }
+
+
+   
+    const user = await User.findById(id);
+    if (!user) {
+      return res.status(404).json({
+        success: false,
+        message: "User not found",
+      });
+    }
 
     const displayPicture = req.files.displayPicture;
     const image = uploadImageToCloudinary(
@@ -112,18 +129,18 @@ exports.updateImage = async (req, res) => {
       1000,
       1000
     );
+    const url = (await image).secure_url
 
     const updateImage = await User.findByIdAndUpdate(
-      { _id: id },
-      {
-        image: image.secure_url,
-      },
-      { new: true }
+      id,
+      { $set: { image: image.secure_url } },
+      { new: true, runValidators: true }
+     
     );
     res.send({
       success: true,
       message: `Profile Picture Changed`,
-      data: updateImage,
+      data: url,
     });
   } catch (error) {
     console.log(error);
