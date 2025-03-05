@@ -11,6 +11,7 @@ import PasswordForget from "./Pages/PasswordForget";
 import Otp from "./Pages/Otp";
 import Dashboard from "./Pages/Dashboard";
 import Profile from "./Pages/dashboard/Profile";
+import AddCourse from "./Pages/dashboard/AddCourse";
 
 function App() {
   return (
@@ -44,7 +45,7 @@ function App() {
         {/* Nested Routing */}
         <Route path="my-profile" index element={<Profile />} />
         <Route path="my-courses" element={<Dashboard />} />
-        <Route path="add-course" element={<Dashboard />} />
+        <Route path="add-course" element={<AddCourse />} />
         <Route path="enrolled-courses" element={<Dashboard />} />
         <Route path="courses" element={<Dashboard />} />
         <Route path="purchase-history" element={<Dashboard />} />

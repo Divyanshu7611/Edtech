@@ -36,6 +36,7 @@ function ProfilePictureHeader() {
     }
     const formData = new FormData();
     formData.append("displayPicture",file)
+    console.log("FOrm",formData)
     dispatch(updateImage(formData))
   };
 

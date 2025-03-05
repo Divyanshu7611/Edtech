@@ -7,10 +7,10 @@ exports.auth = async (req, res, next) => {
   try {
   
     const token =
-      req.cookies?.token ||
-      req.body?.token ||
-      (req.header("Authorization")?.startwith("Bearer ") ?
-        req.header("Authorization").split(" ")[1] : null);
+    req.cookies.token ||
+    req.body.token ||
+    req.header("Authorization").replace("Bearer ", "");
+    console.log(token);
 
     //if token missing, then return response
     if (!token) {

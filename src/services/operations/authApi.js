@@ -188,14 +188,20 @@ export function resetPassword(password, confirmPassword, token) {
 
 // update image
 
+// TODO: Error in it
+
 export function updateImage(formData){
-  // console.log(typeof localStorage);
+  // console.log(typeof localStorage);?
+  // console.log("data",formData.entries())
+  
  
 
   return async (dispatch) => {
     dispatch(setProfileLoading(true))
     try {
-      const response = await apiConnector({method:"PUT",url:CHANGE_PROFILE_IMAGE,bodyData:{formData},header:{"Content-Type":"multipart/form-data"}})
+      const token = JSON.parse(localStorage.getItem("token")); // Unstringify
+
+      const response = await apiConnector({method:"PUT",url:CHANGE_PROFILE_IMAGE,bodyData:{formData},header:{"Content-Type":"multipart/form-data" , Authorization: `Bearer ${token}`}}) 
       console.log("check")
 
       console.log("UPLOAD IMAGE RESPONSE ... ", response);
@@ -215,3 +221,4 @@ export function updateImage(formData){
   }
 
 }
+

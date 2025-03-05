@@ -103,7 +103,8 @@ exports.getAllUserDetails = async (req, res) => {
 
 exports.updateImage = async (req, res) => {
   try {
-    const id = req.user?.id || req.params?.id || req.body?.id;
+       const id = req.user?.id || req.params?.id || req.body?.id;
+
     if(!id){
       console.log("user id is ",id)
       return res.status(401).json({
@@ -121,8 +122,16 @@ exports.updateImage = async (req, res) => {
         message: "User not found",
       });
     }
-
+    console.log("req.files:", req.files); // Debugging
     const displayPicture = req.files.displayPicture;
+
+if (!req.files || !req.files.displayPicture) {
+  return res.status(400).json({
+    success: false,
+    message: "No file uploaded",
+  });
+}
+
     const image = uploadImageToCloudinary(
       displayPicture,
       process.env.FOLDER_NAME,
