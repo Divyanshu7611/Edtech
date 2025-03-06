@@ -20,7 +20,7 @@ function Dashboard() {
     <div className="min-w-screen flex min-h-[cal(100vh - 3.5rem)]">
       <Sidebar />
       <div className="h-[calc(100vh-0.5rem)] flex-1 overflow-auto">
-        <div className="mx-auto w-11/12 max-w-[1000px] py-10">
+        <div className="px-20 w-11/12 max-w-[1200px] py-10">
           <Outlet />
         </div>
       </div>

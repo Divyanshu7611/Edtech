@@ -2,7 +2,7 @@ import React from "react";
 
 const CourseUploadTips = () => {
   return (
-    <div className="border-2 border-[#2C333F] p-4 rounded-lg bg-gray-900 text-white max-w-sm bg-[#161D29]">
+    <div className="border-2 border-[#2C333F] p-4 rounded-lg bg-gray-900 text-white max-w-lg bg-[#161D29]">
       <h2 className="text-lg font-semibold flex items-center gap-2">
         ⚡ Course Upload Tips
       </h2>
