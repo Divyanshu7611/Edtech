@@ -18,10 +18,10 @@ function Stepper({step}) {
 
   ]
   return (
-    <div className='flex items-center justify-between w-xl'>
+    <div className='flex items-center justify-center max-w-lg mx-auto'>
         {
           steps.map((steps,index)=>(
-            <div className='flex items-center justify-between' key={steps.id}>
+              <div className='flex items-center justify-center' key={steps.id}>
               <div className='flex'>
                 <div className='flex flex-col items-start justify-start gap-1'>
                   <div className='flex justify-center items-center'>

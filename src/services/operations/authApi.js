@@ -1,10 +1,11 @@
 import { toast } from "react-hot-toast";
 
 import { setLoading, setToken } from "../../slices/authSlice";
+import {setCategories} from "../../slices/categorySlice"
 import { resetCart } from "../../slices/cartSlice";
 import { setUser,setProfileLoading } from "../../slices/profileSlice";
 import { apiConnector } from "../apiConnector";
-import { endpoints,profileEndpoints } from "../apis";
+import { categories, endpoints,profileEndpoints } from "../apis";
 
 const {
   SENDOTP_API,
@@ -14,6 +15,7 @@ const {
   RESETPASSWORD_API,
 } = endpoints;
 const {CHANGE_PROFILE_IMAGE} = profileEndpoints
+const{CATEGORIES_API} = categories
 
 export function sendOtp(email, navigate) {
   console.log('we here',email)
@@ -220,5 +222,25 @@ export function updateImage(formData){
     }
   }
 
+}
+
+
+
+
+// get categories
+
+export function getCategories(){
+  return async (dispatch) => {
+  try{
+    const response = await apiConnector({method:"GET",url:CATEGORIES_API})
+    dispatch(setCategories(response.data.allCategory))
+    console.log("GET CATEGORIES RESPONSE....",response)
+    if(!response.data.success){
+      throw new Error(response.data.message);
+    }
+  }catch(error){
+    console.log("GET CATEGORIES ERROR....",error)
+  }
+  }
 }
 

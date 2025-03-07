@@ -1,11 +1,24 @@
-import React from 'react'
+import React,{ useEffect,useState } from 'react';
 import CourseUploadTips from '../../Components/Core/Dashboard/course/Tips'
-import CreateCourse from '../../Components/Core/Dashboard/course/CreateCourse'
-import CreateCourseForm from '../../Components/Core/Dashboard/course/CreateCourseForm'
 import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 import { Link } from 'react-router-dom';
-
+import { toast } from 'react-hot-toast';
+import { useDispatch } from 'react-redux';
+import { getCategories } from '../../services/operations/authApi';
+import CreateCourseForm from '../../Components/Core/Dashboard/course/CreateCourseForm'
+import CreateCourse from '../../Components/Core/Dashboard/course/CreateCourse';
 function AddCourse() {
+  const [categories, setCategories] = useState([]);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const fetchCategories = async () => {      
+        const response = await dispatch(getCategories()); // ✅ Await the dispatched function
+    };
+
+    fetchCategories();
+  }, []);
+
   return (
     <div className='flex gap-10 justify-between items-start mt-10'>
 
@@ -17,7 +30,8 @@ function AddCourse() {
           <span>Back to Dashboard</span>
           </Link>
 
-        <CreateCourseForm/>
+        {/* <CreateCourseForm/> */}
+        <CreateCourse/>
         </div>
         {/* course details */}
         <CourseUploadTips/>
