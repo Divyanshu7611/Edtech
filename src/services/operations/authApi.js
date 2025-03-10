@@ -5,7 +5,7 @@ import {setCategories} from "../../slices/categorySlice"
 import { resetCart } from "../../slices/cartSlice";
 import { setUser,setProfileLoading } from "../../slices/profileSlice";
 import { apiConnector } from "../apiConnector";
-import { categories, endpoints,profileEndpoints } from "../apis";
+import { categories, courseEndpoints, endpoints,profileEndpoints } from "../apis";
 
 const {
   SENDOTP_API,
@@ -16,6 +16,7 @@ const {
 } = endpoints;
 const {CHANGE_PROFILE_IMAGE} = profileEndpoints
 const{CATEGORIES_API} = categories
+const {CREATE_COURSE_API} = courseEndpoints
 
 export function sendOtp(email, navigate) {
   console.log('we here',email)
@@ -244,3 +245,27 @@ export function getCategories(){
   }
 }
 
+
+
+// create course
+
+
+export function createCourse(formData,token){
+  return async (dispatch) => {
+    try{
+      const response = await apiConnector({method:"POST",url:CREATE_COURSE_API,bodyData:formData,header:{"Content-Type":"multipart/form-data" , Authorization: `Bearer ${token}`}})
+      if(response?.data.success){
+        toast.success(response.data.message);
+      }
+      console.log("CREATE COURSE RESPONSE....")
+      if(!response.data.success){
+        throw new Error(response.data.message);
+      }
+
+    }catch(error){
+      console.log("CREATE COURSE ERROR....",error)
+      toast.error("Course Creation Failed")
+
+    }
+  }
+}

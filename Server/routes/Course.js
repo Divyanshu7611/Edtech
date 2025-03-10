@@ -10,6 +10,7 @@ const {
 const {
   createCourse,
   getAllCourses,
+  getAllInstructorCourses,
   getCourseData,
 } = require("../controllers/Course");
 
@@ -40,6 +41,7 @@ router.post("/createSubSection", auth, isInstructor, createSubSection);
 router.post("/deleteSection", auth, isInstructor, deleteSection);
 router.post("/delete-SubSection", auth, isInstructor, deleteSubSection);
 router.get("/getAllCourses", getAllCourses);
+router.get("/getInstructorCourse",auth, isInstructor, getAllInstructorCourses);
 router.post("/getCourseData", getCourseData);
 router.get("/get-Categories", ShowallCategory);
 router.post("/get-Category-Details", categoryPageDetails);

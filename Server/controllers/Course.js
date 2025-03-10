@@ -6,6 +6,7 @@ const { uploadImageToCloudinary } = require("../utils/imageUploader");
 exports.createCourse = async (req, res) => {
   try {
     const userId = req.user.id;
+    console.log("Middleware executes ",userId)
 
     // detailsa fetch
     let {
@@ -101,7 +102,41 @@ exports.createCourse = async (req, res) => {
   }
 };
 
+exports.getAllInstructorCourses = async (req, res) => {
+  try {
+    const userId = req.user.id;
+    const getCourses = await Course.find(
+      {instructor:userId},
+      {
+        courseName: true,
+        courseDescription: true,
+        price: true,
+        thumbnail: true,
+        ratingAndReviews: true,
+        instructor: true,
+        studentsEnrolled: true,
+      }
+    )
+      .populate("instructor")
+      .exec();
+
+    return res.status(200).json({
+      success: true,
+      message: "All Data Fetch Successfully",
+      data: getCourses,
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({
+      success: false,
+      message: "Errro in fetching Data",
+      error: error.message,
+    });
+  }
+};
+
 exports.getAllCourses = async (req, res) => {
+ 
   try {
     const getCourses = await Course.find(
       {},
@@ -115,7 +150,7 @@ exports.getAllCourses = async (req, res) => {
         studentsEnrolled: true,
       }
     )
-      .populate("Instructor")
+      .populate("instructor")
       .exec();
 
     return res.status(200).json({

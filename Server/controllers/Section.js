@@ -12,7 +12,7 @@ exports.createSection = async (req, res) => {
         message: "Please Enter correct details",
       });
     }
-    // find and push
+    // find and push'
     const createSection = await section.create({ sectionName });
 
     // update array of course
