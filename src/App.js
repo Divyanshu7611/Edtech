@@ -12,6 +12,7 @@ import Otp from "./Pages/Otp";
 import Dashboard from "./Pages/Dashboard";
 import Profile from "./Pages/dashboard/Profile";
 import AddCourse from "./Pages/dashboard/AddCourse";
+import MyCourse from "./Components/Core/Dashboard/course/instructor/course/MyCourse";
 
 function App() {
   return (
@@ -44,7 +45,7 @@ function App() {
         <Route element={<Dashboard />} path="/dashboard">
         {/* Nested Routing */}
         <Route path="my-profile" index element={<Profile />} />
-        <Route path="my-courses" element={<Dashboard />} />
+        <Route path="my-courses" element={<MyCourse />} />
         <Route path="add-course" element={<AddCourse />} />
         <Route path="enrolled-courses" element={<Dashboard />} />
         <Route path="courses" element={<Dashboard />} />
