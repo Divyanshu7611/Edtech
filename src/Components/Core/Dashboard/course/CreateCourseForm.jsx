@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import cloudImage from "../../../../assets/Dashboard/cloudImage.png";
 import { useDispatch, useSelector } from "react-redux";
-import { createCourse } from "../../../../services/operations/authApi";
+import { createCourse } from "../../../../services/operations/courseApi";
 
 function CreateCourseForm() {
   const { token } = useSelector((state) => state.auth);
