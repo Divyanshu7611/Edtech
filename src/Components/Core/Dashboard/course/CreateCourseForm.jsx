@@ -74,7 +74,6 @@ function CreateCourseForm() {
 
   const dispatch = useDispatch();
   const { categories } = useSelector((state) => state.category);
-  console.log("Comes Categories are", categories);
   return (
     <div className="border-[#2C333F] border w-full p-5 rounded-lg text-[#F1F2FF] bg-[#161D29] mt-5">
       <form className="flex flex-col gap-4" onSubmit={handleSubmit}>

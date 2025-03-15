@@ -3,7 +3,9 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     step: 1,
     courses: null,  
-    currentCourse:null, 
+    currentCourse: localStorage.getItem("currentCourse") 
+        ? JSON.parse(localStorage.getItem("currentCourse")) 
+        : null,
 }
 
 
@@ -20,6 +22,7 @@ export const courseSlice = createSlice({
             },
             setCurrentCourse: (state,action) => {
                 state.currentCourse = action.payload
+                localStorage.setItem("currentCourse", JSON.stringify(action.payload));
             }
     }
 })

@@ -16,6 +16,7 @@ export function createCourse(formData,token){
         if(response?.data?.success){
           toast.success(response.data.message);
           dispatch(setCurrentCourse(response.data.data))
+          // localStorage.setItem("currentCourse",response.data.data)
         }
         console.log("CREATE COURSE RESPONSE....")
         if(!response.data.success){
@@ -42,10 +43,10 @@ export function fetchInstructorCourse(){
 
 
 
-export function createSection(sectionName,courseId){
+export function createSection(data,token){
     return async (dispatch) => {
       try{
-        const response = await apiConnector({method:"POST",url:CREATE_SECTION_API,bodyData:{sectionName,courseId}})
+        const response = await apiConnector({method:"POST",url:CREATE_SECTION_API,bodyData:data,header:{Authorization:`Bearer ${token}`}})
         console.log("RESPONSE COMES",response)
         if(response.data){
             // dispatch(setCurrentCourse(response.data.data))
