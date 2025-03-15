@@ -13,7 +13,7 @@ export function createCourse(formData,token){
     return async (dispatch) => {
       try{
         const response = await apiConnector({method:"POST",url:CREATE_COURSE_API,bodyData:formData,header:{"Content-Type":"multipart/form-data" , Authorization: `Bearer ${token}`}})
-        if(response?.data.success){
+        if(response?.data?.success){
           toast.success(response.data.message);
           dispatch(setCurrentCourse(response.data.data))
         }
@@ -44,10 +44,16 @@ export function fetchInstructorCourse(){
 
 export function createSection(sectionName,courseId){
     return async (dispatch) => {
-        const response = await apiConnector({method:"POST",url:CREATE_COURSE_API,bodyData:{sectionName,courseId}})
+      try{
+        const response = await apiConnector({method:"POST",url:CREATE_SECTION_API,bodyData:{sectionName,courseId}})
         console.log("RESPONSE COMES",response)
         if(response.data){
-            dispatch(setCourse(response.data.data))
+            // dispatch(setCurrentCourse(response.data.data))
+            toast.success("Section Added Successfully")
         }
+      }catch(error){
+        toast.error("Something Went Wrong, Try Again Later");
+        console.log("there might be error",error)
+      }
     }
 }
