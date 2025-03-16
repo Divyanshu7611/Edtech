@@ -3,7 +3,7 @@ import { useSelector,useDispatch } from 'react-redux'
 import { CiCirclePlus } from "react-icons/ci";
 import { createSection } from '../../../../../../services/operations/courseApi';
 
-function CreateSection() {
+function CreateSection({setIsFetching}) {
     const [sectionName,setSectionName] = useState("")
     const {currentCourse} = useSelector((state)=>state.course)
     const {token} = useSelector((state)=>state.auth)
@@ -20,6 +20,7 @@ function CreateSection() {
           sectionName: sectionName,
           courseId: currentCourse._id,
         },token))
+      setIsFetching(true)
     }
     console.log("course Data",currentCourse)
   return (

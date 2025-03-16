@@ -33,6 +33,7 @@ exports.createSection = async (req, res) => {
     res.status(200).json({
       success: true,
       message: "Section Created Successfully",
+      data:createSection
     });
   } catch (error) {
     console.log(error);

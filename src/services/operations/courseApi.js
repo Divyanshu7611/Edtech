@@ -3,7 +3,7 @@ import { courseEndpoints } from "../apis"
 import {setCourse,setCurrentCourse} from "../../slices/courseSlice"
 import {toast} from "react-hot-toast"
 
-const {GET_ALL_INSTRUCTOR_COURSE_API,CREATE_COURSE_API,CREATE_SECTION_API} = courseEndpoints
+const {GET_ALL_INSTRUCTOR_COURSE_API,CREATE_COURSE_API,CREATE_SECTION_API,COURSE_DETAILS_API} = courseEndpoints
 
 
 // create course
@@ -57,4 +57,20 @@ export function createSection(data,token){
         console.log("there might be error",error)
       }
     }
+}
+
+export function getCourseDetails(courseId){
+  return async (dispatch) => {
+    let result = ""
+    try{
+        const response = await apiConnector({method:"POST",url:COURSE_DETAILS_API,bodyData:courseId})
+        if(response.data.success){
+           console.log("Course Details Fetched",response)
+           result = response.data.data
+        }
+        return result
+    }catch(error){
+      console.log("Internal Server Error",error)
+    }
+  }
 }
