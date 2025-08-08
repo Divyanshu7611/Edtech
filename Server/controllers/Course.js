@@ -208,3 +208,35 @@ exports.getCourseData = async (req, res) => {
     });
   }
 };
+             
+exports.deleteCourse = async (req, res) => {
+  try{
+    const { courseId } = req.body;
+    const userId = req.user.id;
+    const courseDetails = await Course.findById(courseId);
+    if(!courseDetails){
+      return res.status(404).json({
+        success: false,
+        message: "Course Not Found",
+      });
+    }
+    if(courseDetails.instructor.toString() !== userId){
+      return res.status(403).json({
+        success: false,
+        message: "You are not authorized to delete this course",
+      });
+    }
+    await Course.findByIdAndDelete(courseId);
+    return res.status(200).json({
+      success: true,
+      message: "Course Deleted Successfully",
+    });
+
+  } catch(err){
+    console.log(err)
+    return res.status(500).json({
+      success: false,
+      message: "Internal server Error",
+    });
+  }
+}

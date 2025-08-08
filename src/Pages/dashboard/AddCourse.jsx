@@ -30,8 +30,8 @@ function AddCourse() {
           <span>Back to Dashboard</span>
           </Link>
 
-        {/* <CreateCourseForm/> */}
-        <CreateCourse/>
+        <CreateCourseForm/>
+        {/* <CreateCourse/> */}
         </div>
         {/* course details */}
         <CourseUploadTips/>
